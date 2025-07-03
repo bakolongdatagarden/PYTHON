@@ -1,24 +1,20 @@
 """
-This program adds three to a user's input.
-"""
+This program calculates how much taxes someone owes based on their income.
 
-def add_three():
-    number = int(input("What's your number?: "))
-    return number + 3
+    If they earn less than $12,000, they are taxed 25% of their income.
 
-"""
-This program adds three to a user's input if:
-    - the input is less than 10
-And adds eight if:
-    - the input is 10 or more
-"""
-def add_three_or_eight():
-    number = int(input("What's your number?: "))
-    if number < 10:
-        return number + 3
-    else: 
-        return number + 8
-
-if __name__ == "__main__":
-    # print(add_three())
-    print(add_three_or_eight())
+    If they earn $12,000 or more, they are taxes 30% of their income.
+"""       
+def get_taxes(): # empty argument because ... 
+        while True:
+            try: 
+                earnings = float(input("Enter your earnings: $"))
+                if earnings < 12000:
+                    tax_owed = earnings * .25
+                else: 
+                    tax_owed = earnings * .30 
+                return tax_owed 
+            except ValueError: 
+                print("Invalid input. Please enter a number.")
+print(f"You owe ${get_taxes():,.2f} in taxes")
+ 
