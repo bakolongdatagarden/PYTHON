@@ -107,10 +107,35 @@ def conditional_statements_demo():
         print("\nPatient has 34C temperature:")
         print(evaluate_temp_with_elif(34))
 
+    def example_calculations():
+        """
+        We can also use conditional statements to perform different calculations.
+
+        SCENARIO:
+
+        You live in a country with only two tax brackts.
+            - People earning less than $12,000 pays 25% in taxes.
+            - Anyone earning $12,000 or more pays 30%. 
+        """
+        # Let's calculate how much tax is owed
+        def get_taxes(earnings):
+            if earnings < 12000:
+                tax_owed = earnings * .25 # 25% tax
+            else:
+                tax_owed = earnings * .30 # 30% tax
+            return tax_owed
+        ana_taxes = get_taxes(9000)
+        bob_taxes = get_taxes(15000)
+        print(ana_taxes)
+        print(bob_taxes)
+
+
     # Call subfunctions here
     # if_statements()
     # if_else_statements()
-    if_elif_else_statements()
+    # if_elif_else_statements()
+    example_calculations()
+
 
 if __name__ == "__main__":
 #    conditions_demo()
