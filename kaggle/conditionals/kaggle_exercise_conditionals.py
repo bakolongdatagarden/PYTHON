@@ -87,8 +87,30 @@ def question_3():
         return bill
     print(get_water_bill(1000))
 
+def question_4():
+    def get_data_bill(gb):
+        """
+        Calculate monthly data bill with base rate and overage charges.
+
+        $100/month for up to 15 GB, then $.10/MB ($100GB) for additional usage.
+        
+        Args: 
+            gb (float): The number of GB that the customer used in a month.
+
+        Returns:
+            (float): The customer's total data services bill in dollars.
+        """
+        if gb <= 15:
+            bill = 100
+        else:
+            bill = 100 + (gb - 15) * 100
+        return bill
+    print(f"Your bill total is ${get_data_bill(15.1):,.2f}.")
+
+
 if __name__ == "__main__":
     # Run question exercises indepedently for practice
     # question_1()
     # question_2()
-    question_3()
+    # question_3()
+    question_4()
